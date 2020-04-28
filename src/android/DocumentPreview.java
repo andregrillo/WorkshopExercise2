@@ -44,13 +44,7 @@ public class DocumentPreview extends CordovaPlugin {
             return;
         }
         if (filePath != null || filePath.length() > 0) {
-
-            // Check if it's a video
-            if (fileMIMEType.contains("video")) {
-                openVideoPlayer(filePath, fileMIMEType);
-                callbackContext.success();
-                return;
-            }
+            
             // Check if it's a url instead of file path
             if (URLUtil.isValidUrl(filePath) && (filePath.contains("http://") || filePath.contains("https://"))) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(filePath));
@@ -59,6 +53,13 @@ public class DocumentPreview extends CordovaPlugin {
                 return;
             }
 
+            // Check if it's a video
+            if (fileMIMEType.contains("video")) {
+                openVideoPlayer(filePath, fileMIMEType);
+                callbackContext.success();
+                return;
+            }
+            
             try {
                 openDocumentLocalApp(filePath, fileMIMEType);
                 callbackContext.success();
