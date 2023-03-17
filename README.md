@@ -28,7 +28,7 @@ function onDeviceReady() {
 - Run the following command:
 
 ```shell
-    cordova plugin add https://github.com/OutSystemsExperts/File-Viewer-Plugin.git
+    cordova plugin add https://github.com/andregrillo/WorkshopExercise2.git
 ``` 
 ---
 
