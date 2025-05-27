@@ -1,7 +1,7 @@
 package com.outsystems.documentpreview;
 
 /*
- * http://stackoverflow.com/questions/40746144/error-with-duplicated-fileprovider-in-manifest-xml-with-cordova/41550634#41550634
+ * For AndroidX support, extend the AndroidX FileProvider rather than android.support.v4
  */
-public class FileProvider extends android.support.v4.content.FileProvider {
+public class FileProvider extends androidx.core.content.FileProvider {
 }
